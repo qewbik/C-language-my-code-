@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int a = 125, b = 12345;
+    long ax = 1234567890;
+    short s = 4043;
+    float x = 2.13459;
+    double dx = 1.1415927;
+    char c = 'W';
+    unsigned long ux = 2541567890;
+
+    printf("a + c = %i%c\n", a, c);
+    printf("x + c = %f%c\n", x, c);
+    printf("dx + ax = %i\n", (int)dx + ax);
+    printf("a + x = %i\n", a + (int)x);
+    printf("a + x = %f\n", (float)a + x);
+    printf("s + b = %i\n", s + b);
+    printf("ax + b = %i\n", ax + b);
+    printf("s + c = %hi%c\n", s, c);
+    printf("ax + c = %li%c\n", ax, c);
+    printf("ax + ux = %lli\n", ax + ux);
+    
+    return 0;
+}
