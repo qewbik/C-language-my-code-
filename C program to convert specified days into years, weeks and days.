@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int all_days = 5321;
+    int years, weeks, days;
+    years = (int)(all_days / 365);
+    weeks = (int)((all_days - (365 * years)) / 7);
+    days = all_days - ((365 * years) + (weeks * 7));
+
+    printf("Years: %i\n", years);
+    printf("Weeks: %i\n", weeks);
+    printf("Days: %i\n", days);
+
+    return 0;
+}
