@@ -1,0 +1,18 @@
+#include <stdio.h>3/
+
+int main(void)
+{   
+    float weight1, weight2;
+    int num1, num2;
+    printf("Enter the weight of the first item: ");
+    scanf("%f", &weight1);
+    printf("Enter the quantity of the first item: ");
+    scanf("%i", &num1);
+    printf("Enter the weight of the second item: ");
+    scanf("%f", &weight2);
+    printf("Enter the quantity of the second item: ");
+    scanf("%i", &num2);
+    double average = ((weight1 * num1) + (weight2 * num2)) / (num1 + num2);
+    printf("The average weight of the items is %f", average);
+    return 0;
+} 
