@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int main(void){
+
+	setvbuf(stdout, NULL, _IONBF, 0);
+
+	int k = 0;
+	char text;
+
+	while(1)
+	{
+		text = getchar();
+		if(text == ' ')
+		{
+			printf("%d ", k);
+			k = 0;
+			continue;
+		}
+		else if(text == '\n')
+		{
+			printf("%d ", k);
+			break;
+		}
+		else
+		{
+			k++;
+		}
+	}
+
+
+  return 0;
+}
