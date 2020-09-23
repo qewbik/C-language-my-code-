@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(void){
+
+	setvbuf(stdout, NULL, _IONBF, 0);
+
+	int n, i, val;
+	int k = 0;
+	scanf("%d", &n);
+	int arr[n];
+
+	for(i = 0; i < n; i++)
+	{
+		scanf("%d", &val);
+		arr[i] = val;
+	}
+
+	for(i = 0; i < n; i++)
+	{
+		k = k + arr[i];
+	}
+
+	printf("%d", k);
+
+	return 0;
+}
