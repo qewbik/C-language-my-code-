@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void){
+
+	setvbuf(stdout, NULL, _IONBF, 0);
+	
+	int k = 0;
+	for(int i = 1; i <= 4; i++)
+	{
+		while(k < i)
+		{
+			printf("%d", i);
+			k++;
+		}
+		printf("\n");
+		k = 0;
+	}
+	return 0;
+}
