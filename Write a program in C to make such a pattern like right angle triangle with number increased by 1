@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void){
+
+	setvbuf(stdout, NULL, _IONBF, 0);
+
+	int k = 0;
+	int j = 0;
+	for(int i = 1; i <= 4; i++)
+	{
+		while(k < i)
+		{
+			printf("%d ", j + 1);
+			j++;
+			k++;
+		}
+		k = 0;
+		j = i;
+		printf("\n");
+	}
+
+	return 0;
+}
