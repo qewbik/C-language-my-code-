@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+typedef struct
+{
+	int customerID;
+	_Bool savings;
+	int balance;
+	double interestrate;
+} account ;
+
+int main(void) {
+
+	setvbuf(stdout, NULL, _IONBF, 0);
+
+	account acc;
+
+	printf("Enter the the user id: ");
+	scanf("%i", &acc.customerID);
+
+	char yn;
+	printf("Is your account is saving type? (Y/N) ");
+	scanf(" %c", &yn);
+
+	if(yn == 'Y' || yn == 'y')
+	{
+		acc.interestrate = 2;
+	}
+	else if(yn == 'N' || yn == 'n')
+	{
+		acc.interestrate = 1;
+	}
+
+	printf("How much money on your balance: ");
+	scanf("%i", &acc.balance);
+
+	double rate = acc.interestrate / 100;
+	int time;
+
+	double total_amount;
+	total_amount = acc.balance;
+	printf("How long do you want to wait? ");
+	scanf("%i", &time);
+
+	for(int i = 0; i < time; i++)
+	{
+		total_amount = total_amount * (1 + rate);
+	}
+	printf("The interest rate for the %i period of time is %f", time, total_amount);
+
+	return 0;
+}
