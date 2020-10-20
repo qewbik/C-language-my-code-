@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+typedef struct
+{
+	int hours;
+	int mins;
+	int advMins;
+} time ;
+
+int main(void) {
+
+	setvbuf(stdout, NULL, _IONBF, 0);
+
+	time t1;
+	t1.advMins = 5;
+
+	printf("Enter the time: ");
+	scanf("%i %i", &t1.hours, &t1.mins);
+
+	if(t1.mins < 55)
+	{
+		printf("The advance time is %i:%i", t1.hours,t1.mins + t1.advMins);
+	}
+	else if(t1.mins >= 55)
+	{
+		t1.mins = t1.mins + t1.advMins;
+		int left = t1.mins - 60;
+
+		if(t1.hours < 23)
+		{
+			printf("The advance time is %i:%i%i", t1.hours + 1, 0, left);
+		}
+		else if(t1. hours == 23)
+		{
+			printf("The advance time is %i%i:%i%i", 0, 0, 0, left);
+		}
+	}
+
+	return 0;
+}
