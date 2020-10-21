@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+typedef struct
+{
+	int red, green, blue;
+} color ;
+
+typedef struct
+{
+	int x, y;
+} coords ;
+
+typedef struct
+{
+	color color;
+	coords point[6];
+} pentagon ;
+
+int main(void) {
+
+	setvbuf(stdout, NULL, _IONBF, 0);
+
+	//color white = {255, 255, 255};
+	//color red = {255, 0, 0};
+	//color black = {0, 127, 0,};
+
+
+	FILE *file;
+	file = fopen("datafile.txt", "r");
+
+	if(file == NULL)
+	{
+		printf("The file has not opened successfully");
+		return 1;
+	}
+
+	printf("The file has opened correctly\n");
+
+	pentagon shape;
+	fscanf(file, "%i", &shape.color.red);
+	fscanf(file, "%i", &shape.color.green);
+	fscanf(file, "%i", &shape.color.blue);
+
+	int i = 0;
+
+	do
+	{
+		fscanf(file, "%i", &shape.point[i].x);
+		fscanf(file, "%i", &shape.point[i].y);
+		i++;
+	}while(!feof(file));
+	printf("The color is %i\n", shape.color.blue);
+
+	for(i = 0; i < 5; i++)
+	{
+		printf("The coordinates are (%i: %i)\n", shape.point[i].x, shape.point[i].y);
+	}
+
+	return 0;
+}
