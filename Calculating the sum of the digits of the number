@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int sumofdigits(int n)
+{
+	int value = 0;
+	while(n != 0)
+	{
+		int k = n % 10;
+		n = n / 10;
+		value = k + value;
+	}
+	return value;
+}
+
+int main(void) {
+
+	setvbuf(stdout, NULL, _IONBF, 0);
+
+	int prompt;
+	scanf("%i", &prompt);
+	int value = sumofdigits(prompt);
+	printf("Sum of digits of the value %i is: %i", prompt, value);
+
+	return 0;
+}
