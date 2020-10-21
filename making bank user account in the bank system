@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+typedef struct
+{
+	int id;
+	char type;
+	int balance;
+} info ;
+
+typedef struct
+{
+	info bank_customer[10];
+} bank_customer ;
+
+int main(void) {
+
+	setvbuf(stdout, NULL, _IONBF, 0);
+
+	FILE *file;
+	file = fopen("datafile.txt", "r");
+
+	if(file ==NULL)
+	{
+		printf("The file has not opened correctly");
+		return 1;
+	}
+
+	printf("The file has opened correctly\n");
+
+	bank_customer user;
+
+	int i = 0;
+
+	do
+	{
+		fscanf(file, "%i %c %i", &user.bank_customer[i].id, &user.bank_customer[i].type, &user.bank_customer[i].balance);
+		i++;
+	} while(!feof(file));
+
+
+	for(i = 0; i < 10; i++)
+	{
+		printf("%i. The user id is: %i\n", i + 1, user.bank_customer[i].id);
+		printf("%i. The user account is %c typed\n", i + 1, user.bank_customer[i].type);
+		printf("%i. The user balance is: %i\n", i + 1, user.bank_customer[i].balance);
+	}
+
+	return 0;
+}
