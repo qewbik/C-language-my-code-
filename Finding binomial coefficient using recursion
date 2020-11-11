@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+double n_choose_k(double n, double k)
+{
+	if(k == n)
+	{
+		return 1;
+	}
+	else if (k == 0)
+	{
+		return 1;
+	}
+	else
+	{
+		return ((n - k + 1) / k) * n_choose_k(n, k - 1);
+	}
+}
+
+int main(void)
+{
+
+	double n = 52;
+	double k = 5;
+
+	double result = n_choose_k(n, k);
+	printf("%lf", result);
+	return 0;
+}
